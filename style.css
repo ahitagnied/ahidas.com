@@ -104,6 +104,10 @@ p {
     margin: 0;
 }
 
+.paper-author-me {
+    color: #971e28;
+}
+
 .paper-conference {
     color: var(--light-gray);
     margin: 4px 0 8px 0;

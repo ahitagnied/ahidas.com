@@ -45,6 +45,10 @@ export async function loadPapers(source = DEFAULT_SOURCE) {
     return parsePapers(await response.text());
 }
 
+function highlightOwnName(authors) {
+    return authors.replace(/Ahitagni Das\*?/g, '<span class="paper-author-me">$&</span>');
+}
+
 function imageLink(paper) {
     const href = paper.website || paper.paper || '#';
     return `<a class="paper-image" href="${href}"><img src="${paper.image}" alt=""></a>`;
@@ -72,7 +76,7 @@ export function renderPapers(papers, { gridContainer, listContainer }) {
                     ${imageLink(paper)}
                     <div>
                         <p class="paper-title">${paper.title}</p>
-                        <p class="paper-authors">${paper.authors}</p>
+                        <p class="paper-authors">${highlightOwnName(paper.authors)}</p>
                         ${conf ? `<p class="paper-conference">${conf}</p>` : ''}
                         ${linksHtml}
                     </div>
