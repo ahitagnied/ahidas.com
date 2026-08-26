@@ -1,0 +1,44 @@
+# Publication list for the site.
+#
+# To add a paper: copy a block below, edit the fields, and put it in the order
+# you want it displayed.
+#
+# Fields:
+#   image        path to the preview image, relative to the site root (required)
+#   title        paper title (required)
+#   authors      author list exactly as it should be printed (required)
+#   conference   e.g. "ECCV 2026"; omit for an unpublished preprint
+#   distinction  e.g. "(Oral)" / "(Spotlight)"; omit if there is none
+#   paper        link to the PDF / arXiv page
+#   website      link to the project page
+#   code         link to the repo
+#   highlight    true = also show in the collapsed grid at the top
+
+- image: assets/papers/levlwm.webp
+  title: 'LeVLWM: Text-Goal Control with Vision-Language World Model'
+  authors: Qiuyi Hua*, Ahitagni Das*, Vivek Boominathan, Randall Balestriero
+  conference: Under review, 2026
+  paper: '.'
+  website: '.'
+  code: '.'
+  highlight: true
+- image: assets/papers/panoless.webp
+  title: 'PanoLess: Environment Reconstruction from Partial Reflective Views'
+  authors: Ahitagni Das, Vivek Boominathan, Ashok Veeraraghavan
+  conference: ECCV 2026
+  paper: https://arxiv.org/abs/2607.25362
+  website: https://vb-glee.github.io/panoless/
+  code: https://github.com/vb-glee/panoless
+  highlight: true
+- image: assets/papers/hbn.webp
+  title: 'Enhancing the Performance of Li/Na-Ion Batteries with h-BN'
+  authors: Ahitagni Das, Atin Pramanik, Mingrui Xu, Xinting Shuai, Abhijit Biswas, Robert Vajtai, Pulickel M. Ajayan
+  conference: ACS Nano 2025
+  paper: https://pubs.acs.org/doi/abs/10.1021/acsnano.5c11425
+  highlight: true
+- image: assets/papers/sodium-ion.webp
+  title: 'An Outlook on Sodium-Ion Battery Technology Toward Practical Application'
+  authors: Mingrui Xu, Xi Chen, Sreehari K. Saju, Ahitagni Das, Atin Pramanik, Pulickel M. Ajayan
+  conference: Journal of Materials Science 2024
+  paper: https://link.springer.com/article/10.1007/s10853-024-10503-z
+  highlight: true
