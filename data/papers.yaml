@@ -14,7 +14,7 @@
 #   code         link to the repo
 #   highlight    true = also show in the collapsed grid at the top
 
-- image: assets/papers/levlwm.webp
+- image: assets/papers/levlwm.gif
   title: 'LeVLWM: Text-Goal Control with Vision-Language World Model'
   authors: Qiuyi Hua*, Ahitagni Das*, Vivek Boominathan, Randall Balestriero
   conference: Under review, 2026
