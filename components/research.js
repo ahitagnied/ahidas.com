@@ -47,9 +47,48 @@ export function initResearch({ gridView, listView, stickyImageEl, scrollToggleEl
         const entries = listView.querySelectorAll('.entry.columns');
         if (!entries.length) return;
 
-        entries.forEach(entry => {
-            entry.style.gridTemplateColumns = isStickyMode() ? '' : '150px minmax(0, 1fr)';
-        });
+        // Disable transitions during measurement
+        entries.forEach(el => { el.style.transition = 'none'; el.style.gridTemplateColumns = ''; });
+
+        if (isStickyMode()) {
+            entries.forEach(el => el.style.transition = '');
+            return;
+        }
+
+        // Temporarily show list if hidden to measure
+        const wasHidden = listView.style.display === 'none';
+        if (wasHidden) {
+            listView.style.visibility = 'hidden';
+            listView.style.position = 'absolute';
+            listView.style.display = 'block';
+        }
+
+        // Start from the natural 1fr/6fr width, floored at 120px
+        const naturalWidth = entries[0].querySelector('.paper-image').offsetWidth;
+        let colWidth = Math.max(120, naturalWidth);
+
+        // Iterate: widen image column until it's at least as tall as the tallest text
+        for (let i = 0; i < 5; i++) {
+            entries.forEach(el => el.style.gridTemplateColumns = colWidth + 'px 1fr');
+
+            let maxTextHeight = 0;
+            entries.forEach(entry => {
+                maxTextHeight = Math.max(maxTextHeight, entry.lastElementChild.offsetHeight);
+            });
+
+            if (maxTextHeight <= colWidth) break;
+            colWidth = maxTextHeight;
+        }
+
+        if (wasHidden) {
+            listView.style.display = 'none';
+            listView.style.visibility = '';
+            listView.style.position = '';
+        }
+
+        // Re-enable transitions
+        void listView.offsetWidth;
+        entries.forEach(el => el.style.transition = '');
     }
 
     function updateStickyImage() {

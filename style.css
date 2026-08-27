@@ -193,9 +193,8 @@ img {
 
 .columns {
     display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-columns: 1fr 6fr;
     grid-gap: 32px;
-    align-items: center;
 }
 
 #about {
@@ -232,8 +231,6 @@ img {
 }
 
 #research-list-view .paper-image {
-    width: 150px;
-    height: 150px;
     overflow: hidden;
 }
 
