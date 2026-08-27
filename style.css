@@ -172,7 +172,6 @@ img {
     width: 100%;
     object-fit: cover;
     box-sizing: border-box;
-    border-radius: 4px;
 }
 
 .paper-image img,
@@ -227,7 +226,6 @@ img {
     width: 100%;
     aspect-ratio: 1/1;
     align-self: start;
-    border-radius: 4px;
     background: var(--lightest-gray);
     transition: opacity 0.2s ease-in-out;
 }
@@ -240,7 +238,6 @@ img {
     display: none;
     cursor: pointer;
     background: var(--lightest-gray);
-    border-radius: 4px;
     background-clip: content-box;
 }
 
