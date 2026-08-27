@@ -7,7 +7,7 @@
 
     /* Layout. The grid holds --grid-columns tiles on a single row, and the
        about photo is sized to match one tile so it lines up with the first. */
-    --content-width: 768px;
+    --content-width: 700px;
     --grid-columns: 4;
     --grid-gap: 8px;
     --tile-width: calc(
@@ -41,6 +41,7 @@ section {
 
 header {
     margin: 8px 0;
+    position: relative;
 }
 
 h1 {
@@ -75,8 +76,9 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    position: relative;
-    top: -0.125em;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .contact-links a {
@@ -198,27 +200,11 @@ img {
 }
 
 #about {
-    display: grid;
-    grid-template-columns: var(--tile-width) 1fr;
-    grid-template-areas:
-        "img header"
-        "img bio";
-    column-gap: 32px;
-    row-gap: 0;
-}
-
-#about img {
-    grid-area: img;
+    display: block;
 }
 
 #about header {
-    grid-area: header;
-    align-self: start;
     margin-top: 0;
-}
-
-#about .about-bio {
-    grid-area: bio;
 }
 
 .paper-image {
@@ -321,23 +307,9 @@ img {
     }
 
     #about {
-        grid-template-columns: auto 1fr;
-        grid-template-areas:
-            "img header"
-            "bio bio";
-        grid-gap: 16px;
         margin-bottom: 0;
     }
 
-    #about img {
-        width: 120px;
-        height: 120px;
-        object-position: center 30%;
-    }
-
-    .contact-links {
-        flex-basis: 100%;
-    }
 }
 
 @media (max-width: 572px) {
