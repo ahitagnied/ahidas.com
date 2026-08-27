@@ -214,7 +214,8 @@ img {
 
 #about header {
     grid-area: header;
-    align-self: center;
+    align-self: start;
+    margin-top: 0;
 }
 
 #about .about-bio {
