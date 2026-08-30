@@ -22,7 +22,7 @@
   website: '.'
   code: '.'
   highlight: true
-- image: assets/papers/panoless.webp
+- image: assets/papers/panoless.gif
   title: 'PanoLess: Environment Reconstruction from Partial Reflective Views'
   authors: Ahitagni Das, Vivek Boominathan, Ashok Veeraraghavan
   conference: ECCV 2026
